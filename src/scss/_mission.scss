@@ -1,0 +1,235 @@
+@use 'rs';
+@use 'color';
+
+/* Feature CSS */
+
+.mission-vision-img-container {
+   position: relative;
+   z-index: 1;
+   padding-right: 100px;
+
+   img {
+      border-radius: 12px;
+   }
+
+   .experience {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      width: 160px;
+      height: 160px;
+      background-color: color.$primary;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border: 10px solid color.$white;
+
+      h3 {
+         color: color.$bg;
+         font-size: 32px;
+         letter-spacing: -1.2px;
+         line-height: 1.1;
+
+         @media #{rs.$bp-lg} {
+            font-size: 52px;
+         }
+      }
+
+      span {
+         display: block;
+         margin-bottom: 0;
+         color: color.$bg;
+         font-size: 14px;
+      }
+   }
+}
+
+.mission-vision-content {
+   >h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -1.8px;
+
+      @media #{rs.$bp-lg} {
+         font-size: 42px;
+      }
+
+      @media #{rs.$bp-xl} {
+         font-size: 60px;
+      }
+   }
+
+   >p {
+      margin-top: 18px;
+   }
+}
+
+.mission-vision-accordion {
+   .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   .accordion-item {
+      background-color: color.$bg;
+      border-radius: 8px;
+      border: 0;
+
+      .accordion-button {
+         border-radius: 8px;
+         background: transparent;
+         color: color.$white;
+         font-size: 18px;
+         font-weight: 600;
+         letter-spacing: -0.4px;
+         border: 1px solid color.$border;
+
+         @media #{rs.$bp-lg} {
+            font-size: 24px;
+         }
+
+         &:focus {
+            box-shadow: none !important;
+         }
+
+         &::after {
+            background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%205V19%22%20stroke%3D%22%23FEFEFE%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22square%22/%3E%3Cpath%20d%3D%22M5%2012H19%22%20stroke%3D%22%23FEFEFE%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22square%22/%3E%3C/svg%3E");
+         }
+
+         &:not(.collapsed) {
+            color: color.$bg;
+            background-color: color.$primary;
+            box-shadow: none;
+            border-radius: 8px 8px 0 0;
+
+            &::after {
+               background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M5%2012H19%22%20stroke%3D%22%230A0C00%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22square%22/%3E%3C/svg%3E");
+            }
+         }
+      }
+
+      .accordion-body {
+         padding: 20px 30px;
+         color: color.$white;
+         font-size: 16px;
+         border-radius: 0 0 9px 9px;
+         border-left: 1px solid color.$border;
+         border-right: 1px solid color.$border;
+         border-bottom: 1px solid color.$border;
+
+         @media #{rs.$bp-xl} {
+            font-size: 18px;
+         }
+      }
+   }
+}
+
+.practice-section {
+   background-color: color.$bg-secondary;
+}
+
+.practice-item {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   gap: 50px;
+   border-radius: 12px;
+   transition: all 500ms ease;
+   overflow: hidden;
+
+   @media #{rs.$bp-md} {
+      gap: 60px;
+      flex-wrap: nowrap;
+   }
+
+   @media #{rs.$bp-lg} {
+      gap: 80px;
+   }
+
+   @media #{rs.$bp-xl} {
+      gap: 100px;
+   }
+
+   .practice-number {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      background-color: color.$white;
+      color: color.$text;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 500ms ease;
+   }
+
+   .practice-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: color.$white;
+      transition: all 500ms ease;
+
+      @media #{rs.$bp-lg} {
+         font-size: 36px;
+      }
+   }
+
+   .btn {
+      opacity: 0;
+      display: none;
+      transition: all 350ms ease;
+   }
+
+   .practice-img {
+      border-radius: 12px;
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+      transition: all 500ms ease;
+
+      @media #{rs.$bp-md} {
+         width: 250px;
+         flex: 0 0 250px;
+         max-width: 250px;
+      }
+
+      @media #{rs.$bp-lg} {
+         width: 350px;
+         flex: 0 0 350px;
+         max-width: 350px;
+      }
+
+      @media #{rs.$bp-xl} {
+         width: 450px;
+         flex: 0 0 450px;
+         max-width: 450px;
+      }
+
+      img {
+         width: 100%;
+         border-radius: 12px;
+      }
+   }
+
+   &:hover,
+   &.active {
+      padding: 40px 30px;
+      background-color: color.$text-hover;
+
+      @media #{rs.$bp-lg} {
+         padding: 60px 50px;
+      }
+
+      .btn {
+         opacity: 1;
+         display: inline-flex;
+      }
+   }
+}

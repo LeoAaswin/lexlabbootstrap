@@ -1,0 +1,556 @@
+@use 'rs';
+@use 'color';
+
+/* Header CSS */
+
+.header-area {
+   background-color: transparent;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+   background-color: color.$bg;
+   transition: all 350ms;
+
+   &::after {
+      transition: all 350ms;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.15);
+      content: '';
+      bottom: 0;
+      left: 0;
+      z-index: -10;
+   }
+
+   @media #{rs.$bp-lg} {
+      box-shadow: none;
+   }
+
+   &.mobile-menu-open {
+      background-color: color.$bg;
+   }
+
+   .navbar-toggler {
+      padding: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      font-size: 1.5rem;
+      color: color.$white;
+      border: 0;
+
+      &:focus {
+         box-shadow: none;
+      }
+   }
+
+   .navbar {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      transition: all 350ms;
+
+      @media #{rs.$bp-lg} {
+         height: 110px;
+         padding-top: 0;
+         padding-bottom: 0;
+      }
+
+      .navbar-brand {
+         margin-right: 2rem;
+         line-height: 1 !important;
+
+         @media #{rs.$bp-xl} {
+            margin-right: 3rem;
+         }
+
+         .img-logo {
+            width: 100%;
+            height: auto;
+            max-width: 60px;
+         }
+      }
+   }
+
+   .navbar-nav {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      @media #{rs.$bp-lg} {
+         gap: 16px;
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      @media #{rs.$bp-xl} {
+         gap: 32px;
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      @media #{rs.$bp-xxl} {
+         gap: 44px;
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      li {
+         >a {
+            display: inline-block;
+            color: color.$white;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: capitalize;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            transition: all 350ms;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            i {
+               margin-top: 3px;
+            }
+
+            @media #{rs.$bp-xl} {
+               padding-top: 1.5rem;
+               padding-bottom: 1.5rem;
+            }
+
+            &:hover {
+               color: color.$primary;
+            }
+         }
+
+         .lawgis-dd-menu {
+            list-style: none;
+            background-color: transparent;
+            position: relative;
+            z-index: 100;
+            top: 100%;
+            width: 100%;
+            border: 0;
+            border-radius: .5rem;
+            display: none;
+            padding-left: 0;
+
+            @media #{rs.$bp-lg} {
+               padding: 1rem 0;
+               transition: all 350ms;
+               position: absolute;
+               top: calc(100% + 8px);
+               width: 15rem;
+               background-color: color.$bg;
+               visibility: hidden;
+               opacity: 0;
+               display: block;
+               left: -1rem;
+               border: 1px solid color.$border;
+            }
+
+            li>a {
+               transition: all 350ms;
+               position: relative;
+               font-size: 1rem;
+               padding: .375rem 1rem;
+               color: color.$white;
+               text-transform: capitalize;
+               align-items: center;
+               justify-content: space-between;
+
+               @media #{rs.$bp-lg} {
+                  padding: .375rem 1.5rem;
+               }
+
+               &:hover,
+               &:focus {
+                  background-color: transparent;
+                  color: color.$primary;
+
+                  @media #{rs.$bp-lg} {
+                     color: color.$primary;
+                  }
+               }
+            }
+         }
+
+         &.lawgis-dd {
+            position: relative;
+            z-index: 1;
+
+            .dropdown-toggler {
+               position: absolute;
+               width: 100%;
+               height: 36px;
+               z-index: 100;
+               background-color: transparent;
+               color: color.$primary;
+               top: 2px;
+               cursor: pointer;
+               left: 0;
+               display: flex;
+               align-items: center;
+               justify-content: flex-end;
+               font-size: 14px;
+
+               @media #{rs.$bp-lg} {
+                  display: none;
+               }
+            }
+
+            >a {
+               position: relative;
+            }
+
+            &:hover,
+            &:focus {
+
+               @media #{rs.$bp-lg} {
+                  .lawgis-dd-menu {
+                     visibility: visible;
+                     opacity: 1;
+                     top: 100%;
+                  }
+               }
+            }
+
+            .lawgis-dd {
+
+               .dropdown-toggler {
+                  right: 1rem;
+               }
+
+               >a {
+                  position: relative;
+                  width: 100%;
+               }
+
+               .lawgis-dd-menu {
+                  display: none;
+                  padding-left: 1rem;
+
+                  @media #{rs.$bp-lg} {
+                     margin-left: .25rem;
+                     top: -8px;
+                     left: 100%;
+                     visibility: hidden;
+                     opacity: 0;
+                     display: block;
+                  }
+               }
+
+               &:hover,
+               &:focus {
+
+                  @media #{rs.$bp-lg} {
+                     .lawgis-dd-menu {
+                        visibility: visible;
+                        opacity: 1;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   &.sticky-on {
+      background-color: color.$bg;
+      box-shadow: 0 1rem 3rem rgba(194, 199, 240, 0.175);
+
+      &::after {
+         background-color: rgba(255, 255, 255, 0.0);
+      }
+
+      .navbar {
+         @media #{rs.$bp-lg} {
+            height: 90px;
+         }
+      }
+   }
+
+   &.style-two {
+      .header-top {
+         width: 100%;
+         height: 50px;
+         background-color: color.$bg;
+         transition-duration: 350ms;
+      }
+
+      .navbar {
+         background-color: color.$white;
+         transition-duration: 350ms;
+
+         @media #{rs.$bp-lg} {
+            height: 100px;
+         }
+      }
+
+      .navbar-toggler {
+         color: color.$heading;
+      }
+
+      .social-nav {
+         a {
+            color: color.$white;
+            font-size: 20px;
+
+            &:hover,
+            &:focus {
+               color: color.$primary;
+            }
+         }
+      }
+
+      .navbar-nav {
+         li {
+            >a {
+               color: color.$heading;
+
+               &:hover {
+                  color: color.$primary-hover;
+               }
+            }
+
+            .lawgis-dd-menu {
+               background-color: transparent;
+
+               @media #{rs.$bp-lg} {
+                  background-color: color.$bg;
+                  border: 1px solid color.$border;
+               }
+
+               li>a {
+                  color: color.$heading;
+
+                  @media #{rs.$bp-lg} {
+                     color: color.$white;
+                  }
+
+                  &:hover,
+                  &:focus {
+                     background-color: transparent;
+                     color: color.$primary;
+
+                     @media #{rs.$bp-lg} {
+                        color: color.$primary;
+                     }
+                  }
+               }
+            }
+
+            &.lawgis-dd {
+
+               .dropdown-toggler {
+                  background-color: transparent;
+                  color: color.$primary;
+               }
+            }
+         }
+      }
+
+      &.sticky-on {
+         .header-top {
+            height: 40px;
+         }
+
+         &::after {
+            background-color: rgba(255, 255, 255, 0.0);
+         }
+
+         .navbar {
+            @media #{rs.$bp-lg} {
+               height: 80px;
+            }
+         }
+      }
+   }
+
+   &.style-three {
+      &::after {
+         display: none;
+      }
+
+      &.header-area {
+         top: 36px;
+         background-color: transparent;
+      }
+
+      .navbar {
+         border-radius: 5rem;
+         padding-left: 30px;
+         padding-right: 30px;
+
+         @media #{rs.$bp-lg} {
+            height: 90px;
+         }
+      }
+
+      &.sticky-on {
+         box-shadow: none;
+
+         .navbar {
+            box-shadow: 0 1rem 3rem rgba(194, 199, 240, 0.30);
+
+            @media #{rs.$bp-lg} {
+               height: 75px;
+            }
+         }
+      }
+
+      &.mobile-menu-open {
+         .navbar {
+            border-radius: 12px;
+         }
+      }
+   }
+}
+
+.call-now-btn {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+
+   .icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: color.$warning-two;
+   }
+
+   span {
+      display: block;
+      font-size: 14px;
+      color: color.$bg-secondary;
+
+      &:last-child {
+         font-size: 16px;
+         font-weight: 600;
+      }
+   }
+}
+
+.header-search-btn {
+   .btn {
+      min-width: 20px;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 36px;
+      color: color.$white;
+
+      i {
+         font-size: 24px;
+      }
+
+      @media #{rs.$bp-lg} {
+         margin-left: 30px;
+      }
+
+      @media #{rs.$bp-xl} {
+         margin-left: 60px;
+      }
+   }
+}
+
+.sideMenuButton {
+   width: 60px;
+   height: 60px;
+   border-radius: 6px;
+   min-width: 50px;
+   padding: 0;
+   background-color: color.$primary;
+
+   &:hover,
+   &:focus {
+      svg {
+         path {
+            stroke: color.$white;
+         }
+      }
+   }
+}
+
+.right-side-lawgis-offcanvas {
+   width: 320px !important;
+   background-color: color.$white;
+
+   @media #{rs.$bp-sm} {
+      width: 450px !important;
+   }
+
+   @media #{rs.$bp-xl} {
+      width: 500px !important;
+   }
+
+   .offcanvas-header {
+      height: 110px;
+      justify-content: space-between;
+      border-bottom: 1px solid color.$border;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: color.$gray;
+
+      @media #{rs.$bp-sm} {
+         padding-left: 40px;
+         padding-right: 40px;
+      }
+
+      .btn-close {
+         width: 40px;
+         height: 40px;
+         padding: 0;
+         margin: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+      }
+   }
+
+   .offcanvas-body {
+      padding: 40px 20px;
+      scrollbar-width: thin;
+
+      @media #{rs.$bp-sm} {
+         padding: 60px 40px;
+      }
+   }
+}
+
+@media #{rs.$bp-lg} {
+   .lawgis-dd-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 350ms ease, transform 350ms ease;
+
+      li {
+         opacity: 0;
+         transform: translateY(10px);
+         transition: opacity 350ms ease, transform 350ms ease;
+      }
+   }
+
+   .lawgis-dd:hover {
+      .lawgis-dd-menu {
+         opacity: 1;
+         visibility: visible;
+         transform: translateY(0);
+
+         li {
+            opacity: 1;
+            transform: translateY(0);
+         }
+
+         @for $i from 1 through 20 {
+            li:nth-child(#{$i}) {
+               transition-delay: #{$i * 100}ms;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,112 @@
+@use 'rs';
+@use 'color';
+
+/* FAQ CSS */
+
+.faq-accordion {
+   .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   .accordion-item {
+      background-color: color.$text;
+      border-radius: 12px;
+      border: 0;
+
+      .accordion-button {
+         border-radius: 12px;
+         background: transparent;
+         color: color.$white;
+         font-size: 16px;
+         font-weight: 600;
+         letter-spacing: -0.4px;
+         padding: 20px 30px;
+
+         @media #{rs.$bp-lg} {
+            font-size: 22px;
+         }
+
+         &:focus {
+            box-shadow: none !important;
+         }
+
+         &::after {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMTggMTIuOTk2MUgxM1YxNy45OTYxQzEzIDE4LjI2MTMgMTIuODk0NiAxOC41MTU3IDEyLjcwNzEgMTguNzAzMkMxMi41MTk2IDE4Ljg5MDcgMTIuMjY1MiAxOC45OTYxIDEyIDE4Ljk5NjFDMTEuNzM0OCAxOC45OTYxIDExLjQ4MDQgMTguODkwNyAxMS4yOTI5IDE4LjcwMzJDMTEuMTA1NCAxOC41MTU3IDExIDE4LjI2MTMgMTEgMTcuOTk2MVYxMi45OTYxSDZDNS43MzQ3OCAxMi45OTYxIDUuNDgwNDMgMTIuODkwNyA1LjI5Mjg5IDEyLjcwMzJDNS4xMDUzNiAxMi41MTU3IDUgMTIuMjYxMyA1IDExLjk5NjFDNSAxMS43MzA5IDUuMTA1MzYgMTEuNDc2NSA1LjI5Mjg5IDExLjI4OTBDNS40ODA0MyAxMS4xMDE1IDUuNzM0NzggMTAuOTk2MSA2IDEwLjk5NjFIMTFWNS45OTYwOUMxMSA1LjczMDg4IDExLjEwNTQgNS40NzY1MiAxMS4yOTI5IDUuMjg4OTlDMTEuNDgwNCA1LjEwMTQ1IDExLjczNDggNC45OTYwOSAxMiA0Ljk5NjA5QzEyLjI2NTIgNC45OTYwOSAxMi41MTk2IDUuMTAxNDUgMTIuNzA3MSA1LjI4ODk5QzEyLjg5NDYgNS40NzY1MiAxMyA1LjczMDg4IDEzIDUuOTk2MDlWMTAuOTk2MUgxOEMxOC4yNjUyIDEwLjk5NjEgMTguNTE5NiAxMS4xMDE1IDE4LjcwNzEgMTEuMjg5QzE4Ljg5NDYgMTEuNDc2NSAxOSAxMS43MzA5IDE5IDExLjk5NjFDMTkgMTIuMjYxMyAxOC44OTQ2IDEyLjUxNTcgMTguNzA3MSAxMi43MDMyQzE4LjUxOTYgMTIuODkwNyAxOC4yNjUyIDEyLjk5NjEgMTggMTIuOTk2MVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=');
+         }
+
+         &:not(.collapsed) {
+            box-shadow: none;
+            border-radius: 10px 10px 0 0;
+            background-color: color.$primary;
+            color: color.$heading;
+
+            &::after {
+               background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMTggMTIuOTk2MUg2QzUuNzM0NzggMTIuOTk2MSA1LjQ4MDQzIDEyLjg5MDcgNS4yOTI4OSAxMi43MDMyQzUuMTA1MzYgMTIuNTE1NyA1IDEyLjI2MTMgNSAxMS45OTYxQzUgMTEuNzMwOSA1LjEwNTM2IDExLjQ3NjUgNS4yOTI4OSAxMS4yODkwQzUuNDgwNDMgMTEuMTAxNSA1LjczNDc4IDEwLjk5NjEgNiAxMC45OTYxSDE4QzE4LjI2NTIgMTAuOTk2MSAxOC41MTk2IDExLjEwMTUgMTguNzA3MSAxMS4yODkwQzE4Ljg5NDYgMTEuNDc2NSAxOSAxMS43MzA5IDE5IDExLjk5NjFDMTkgMTIuMjYxMyAxOC44OTQ2IDEyLjUxNTcgMTguNzA3MSAxMi43MDMyQzE4LjUxOTYgMTIuODkwNyAxOC4yNjUyIDEyLjk5NjEgMTggMTIuOTk2MVoiIGZpbGw9IiMxQzFEMjAiLz4KPC9zdmc+Cg==');
+            }
+         }
+      }
+
+      .accordion-body {
+         padding: 20px 30px;
+         color: color.$white;
+         font-size: 16px;
+         border-radius: 0 0 10px 10px;
+      }
+   }
+
+   &.service-details-faq {
+      .accordion {
+         gap: 0;
+      }
+
+      .accordion-item {
+         background: transparent;
+         border-bottom: 1px solid rgba(38, 38, 41, 0.30);
+         border-radius: 0;
+
+         &:first-child {
+            border-top: 1px solid rgba(38, 38, 41, 0.30);
+         }
+
+         .accordion-button {
+            background: transparent;
+            color: color.$heading;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 28px 30px;
+            border-radius: 0;
+
+            @media #{rs.$bp-lg} {
+               font-size: 22px;
+            }
+
+            &:focus {
+               box-shadow: none !important;
+            }
+
+            &::after {
+               background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M12.832 12.832V5.83203H15.1654V12.832H22.1654V15.1654H15.1654V22.1654H12.832V15.1654H5.83203V12.832H12.832Z" fill="%231C1D20"/></svg>');
+            }
+
+            &:not(.collapsed) {
+               &::after {
+                  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 12.3487L18.9497 7.39897L20.5997 9.04888L15.6499 13.9986L20.5997 18.9484L18.9497 20.5983L14 15.6485L9.05025 20.5983L7.40034 18.9484L12.3501 13.9986L7.40034 9.04888L9.05025 7.39897L14 12.3487Z" fill="%231C1D20"/></svg>');
+               }
+            }
+         }
+
+         .accordion-body {
+            padding-top: 0;
+            font-size: 16px;
+            color: color.$text;
+            padding: 0 30px 30px 30px;
+
+            @media #{rs.$bp-xl} {
+               font-size: 18px;
+            }
+         }
+      }
+   }
+}

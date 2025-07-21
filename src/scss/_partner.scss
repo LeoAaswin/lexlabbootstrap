@@ -1,0 +1,29 @@
+@use 'rs';
+@use 'color';
+
+/* Partner CSS */
+
+.trusted-clients-logo {
+   >div {
+      font-size: 22px;
+      font-weight: 600;
+   }
+
+   img {
+      max-height: 45px;
+      transition: all 0.35s;
+
+      @media #{rs.$bp-xl} {
+         max-height: 55px;
+      }
+
+      @media #{rs.$bp-xxl} {
+         max-height: 60px;
+      }
+
+      &:hover {
+         transform: scale(1.1);
+         cursor: pointer;
+      }
+   }
+}

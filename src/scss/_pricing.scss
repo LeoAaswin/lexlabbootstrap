@@ -1,0 +1,164 @@
+@use 'rs';
+@use 'color';
+
+/* Pricing CSS */
+
+.pricing-plan-wrapper {
+   background-color: color.$bg-secondary;
+}
+
+.price-card {
+   .single-price-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(102, 107, 118, 0.30);
+
+      &:first-child {
+         padding-top: 0;
+      }
+
+      &:last-child {
+         border-bottom: none;
+         padding-bottom: 0;
+      }
+
+      div {
+         > div {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            line-height: 1.5;
+
+            @media #{rs.$bp-lg} {
+              font-size: 24px;
+            }
+         }
+
+         > p {
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: 1.5;
+
+            @media #{rs.$bp-lg} {
+              font-size: 16px;
+            }
+         }
+      }
+
+      .price-value {
+         flex: 0 0 100px;
+         text-align: right;
+         font-size: 24px;
+         font-weight: 600;
+         color: color.$primary;
+      }
+   }
+
+   > img {
+      opacity: 0.1;
+      width: 100%;
+   }
+}
+
+.price-card2 {
+   position: relative;
+   z-index: 1;
+   padding: 42px 32px;
+   border-radius: 12px;
+   background: color.$text-hover;
+   transition: all 350ms;
+
+   .plan-name {
+      font-size: 22px;
+      font-weight: 600;
+      color: color.$white;
+      margin-bottom: 12px;
+   }
+
+   p {
+      color: color.$white;
+      font-size: 16px;
+      margin-bottom: 1.5rem;
+   }
+
+   .price-value {
+      display: flex;
+      align-items: last baseline;
+      color: color.$white;
+      font-size: 52px;
+      margin-bottom: 2rem;
+      line-height: 1.1;
+
+      span {
+         font-size: 16px;
+      }
+   }
+
+   ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 3rem;
+
+      li {
+         color: color.$white;
+         font-size: 16px;
+         display: flex;
+         align-items: center;
+         gap: 12px;
+
+         i {
+            color: color.$white;
+            font-size: 24px;
+         }
+      }
+   }
+
+   &.active {
+      background-color: color.$primary;
+
+      .plan-name {
+         color: color.$heading;
+      }
+
+      p {
+         color: color.$heading;
+      }
+
+      .price-value {
+         color: color.$heading;
+      }
+
+      ul {
+         li {
+            color: color.$heading;
+            
+            i {
+               color: color.$heading;
+            }
+         }
+      }
+
+      .btn {
+         background-color: color.$heading;
+         color: color.$white;
+      }
+   }
+
+   &:hover, &:focus {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   }
+}

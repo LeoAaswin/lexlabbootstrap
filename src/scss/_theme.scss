@@ -1,0 +1,117 @@
+@use 'rs';
+@use 'color';
+
+.theme-two {
+    .btn-primary {
+        background-color: color.$warning-two;
+        color: color.$heading;
+
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: color.$primary-hover;
+            color: color.$white;
+        }
+    }
+
+    .btn-link {
+        color: color.$warning-two;
+
+        &:active,
+        &:hover,
+        &:focus {
+            color: color.$primary-hover;
+            box-shadow: none;
+        }
+    }
+
+    .cookiealert,
+    .copyright.footer2,
+    .bg-primary,
+    .service-slide-card:hover,
+    .service-slide-card:focus,
+    .price-card2.active,
+    .lawgis-scrolltop {
+        background-color: color.$warning-two !important;
+    }
+
+    .text-primary {
+        color: color.$warning-two !important;
+    }
+
+    .service-slide-card>i {
+        color: color.$warning-two;
+    }
+
+    .service-slide-card:hover>i {
+        color: color.$heading;
+    }
+
+    .blog-card.style-three.dark-style .post-title:hover,
+    .blog-card.style-three.dark-style .post-title:focus {
+        color: color.$warning-two;
+    }
+
+    .lawgis-scrolltop {
+        color: color.$heading;
+    }
+
+    .service-section.style-two .service-swiper-slider-navigation>div {
+        background-color: transparent;
+        border-color: color.$warning-two;
+
+        &:hover,
+        &:focus {
+            background-color: color.$warning-two;
+        }
+    }
+
+    .testimonial-pagination.style-two>span.swiper-pagination-bullet-active,
+    .award-card.style-three:hover .award-serial {
+        background-color: color.$warning-two;
+        border-color: color.$warning-two;
+    }
+
+    .award-card.style-three:hover .award-serial,
+    .footer-bottom-content .social-nav a:hover,
+    .footer-bottom-content .social-nav a:focus {
+        color: color.$heading;
+    }
+
+    .blog-card.style-five .post-title:hover,
+    .blog-card.style-five .post-title:focus,
+    .footer-bottom-content .copyright a,
+    .footer-bottom-nav a:hover,
+    .footer-bottom-nav a:focus {
+        color: color.$warning-two;
+    }
+
+    .footer-bottom-content .social-nav a:hover,
+    .footer-bottom-content .social-nav a:focus {
+        border-color: color.$warning-two;
+        background-color: color.$warning-two;
+    }
+
+    .footer-card .social-nav a {
+        border-color: color.$white;
+        color: color.$white;
+
+        &:hover,
+        &:focus {
+            border-color: color.$warning-two;
+            background-color: color.$warning-two;
+        }
+    }
+
+    .blog-card.style-five .blog-meta a:hover,
+    .blog-card.style-five .blog-meta a:focus,
+    .blog-card.style-three.dark-style .blog-meta a:hover,
+    .blog-card.style-three.dark-style .blog-meta a:focus {
+        color: color.$warning-two;
+    }
+
+    .footer-card .footer-nav li a:hover,
+    .footer-card .footer-nav li a:focus {
+        color: color.$warning-two;
+    }
+}

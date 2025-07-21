@@ -1,0 +1,121 @@
+@use 'rs';
+@use 'color';
+
+/* Breadcrumb CSS */
+
+.breadcrumb-section {
+   position: relative;
+   z-index: 1;
+   margin-top: 68px;
+
+   &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(48.33% 39.41% at 74.75% 53.85%, rgba(28, 29, 32, 0.00) 0%, #1C1D20 100%);
+      z-index: -10;
+      transform: rotate(180deg);
+   }
+
+   &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(28, 29, 32, 0.90);
+      z-index: -10;
+   }
+
+   @media #{rs.$bp-lg} {
+      margin-top: 110px;
+   }
+
+   .breadcrumb-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+         color: color.$white;
+         text-align: center;
+         font-size: 36px;
+         letter-spacing: -1.6px;
+
+         @media #{rs.$bp-sm} {
+            font-size: 42px;
+         }
+
+         @media #{rs.$bp-md} {
+            font-size: 48px;
+         }
+
+         @media #{rs.$bp-lg} {
+            font-size: 56px;
+         }
+
+         @media #{rs.$bp-xl} {
+            font-size: 64px;
+         }
+
+         @media #{rs.$bp-xxl} {
+            font-size: 80px;
+         }
+      }
+
+      ul {
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         gap: 10px;
+
+         li {
+            color: color.$white;
+            font-size: 12px;
+
+            @media #{rs.$bp-sm} {
+               font-size: 14px;
+            }
+
+            @media #{rs.$bp-md} {
+               font-size: 16px;
+            }
+
+            a {
+               color: rgba(255, 255, 255, 0.80);
+               font-size: 12px;
+               letter-spacing: -0.14px;
+               position: relative;
+               z-index: 1;
+               padding-right: 10px;
+
+               @media #{rs.$bp-sm} {
+                  font-size: 14px;
+               }
+
+               @media #{rs.$bp-md} {
+                  font-size: 16px;
+               }
+
+               &:hover,
+               &:focus {
+                  color: color.$primary;
+               }
+
+               &::after {
+                  content: '>';
+                  position: absolute;
+                  right: -3px;
+                  top: 50%;
+                  transform: translateY(-50%);
+               }
+            }
+         }
+      }
+   }
+}

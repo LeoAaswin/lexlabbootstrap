@@ -1,0 +1,49 @@
+@use 'rs';
+@use 'color';
+
+/* Cookie CSS */
+
+.cookiealert {
+   position: fixed;
+   left: 1rem;
+   bottom: 1rem;
+   z-index: 1000;
+   max-width: 280px;
+   padding: 40px 32px;
+   border-radius: 12px;
+   background-color: color.$primary;
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(-16px);
+   transition-duration: 350ms;
+
+   @media #{rs.$bp-md} {
+      max-width: 450px;
+      left: 2rem;
+      bottom: 2rem;
+   }
+
+   &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+   }
+
+   h2 {
+      color: color.$bg;
+   }
+
+   p {
+      font-size: 12px;
+      color: color.$bg;
+
+      @media #{rs.$bp-md} {
+         font-size: 14px;
+      }
+   }
+
+   a {
+      color: color.$bg;
+      text-decoration: underline;
+   }
+}

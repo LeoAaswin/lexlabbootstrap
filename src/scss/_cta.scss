@@ -1,0 +1,121 @@
+@use 'rs';
+@use 'color';
+
+/* CTA CSS */
+
+.countdown-section {
+   background-color: color.$text-hover;
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+
+   &::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 404px;
+      flex-shrink: 0;
+      background-color: rgba(255, 255, 255, 0.10);
+      z-index: -10;
+      bottom: -67%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: all 0.3s;
+   }
+
+   &::before {
+      content: '';
+      position: absolute;
+      width: 540px;
+      height: 436px;
+      flex-shrink: 0;
+      background-color: rgba(255, 255, 255, 0.10);
+      z-index: -10;
+      top: -5%;
+      left: -5%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: all 0.3s;
+   }
+
+   .countdown-card {
+      position: relative;
+      z-index: 1;
+
+      &::after {
+         width: 450px;
+         height: 450px;
+         flex-shrink: 0;
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         border-radius: 50%;
+         background: color.$warning-two;
+         z-index: -10;
+      }
+   }
+
+   .countdown-card-item {
+      border-radius: 18px;
+      background: color.$bg-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px 20px;
+
+      @media #{rs.$bp-xl} {
+         padding: 60px 20px;
+      }
+
+      h2 {
+         color: color.$white;
+         font-size: 48px;
+         line-height: 1.1;
+
+         @media #{rs.$bp-xl} {
+            font-size: 80px;
+         }
+      }
+
+      p {
+         font-size: 18px;
+         color: color.$white;
+      }
+   }
+}
+
+.cta-wrapper {
+   background-color: color.$bg;
+   position: relative;
+   z-index: 1;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+
+   &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(color.$bg, 0.70);
+      z-index: -10;
+   }
+
+   h2 {
+      color: color.$white;
+      font-size: clamp(36px, 5vw, 80px);
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+   }
+
+   p {
+      color: color.$secondary;
+      margin-bottom: 40px;
+   }
+}

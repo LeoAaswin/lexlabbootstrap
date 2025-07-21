@@ -1,0 +1,176 @@
+@use 'rs';
+@use 'color';
+
+/* Timeline CSS */
+
+.lawgis-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+ }
+ 
+ .timeline-event {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 25%;
+    width: 25%;
+    max-width: 25%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media #{rs.$bp-lg} {
+      height: 300px;
+    }
+
+    @media #{rs.$bp-xl} {
+      height: 380px;
+    }
+ 
+    &::after {
+       position: absolute;
+       width: 100%;
+       height: 2px;
+       left: 0;
+       top: 50%;
+       transform: translateY(-50%);
+       background-color: rgba(250, 246, 243, 0.30);
+       content: '';
+       z-index: -10;
+    }
+ 
+    .timeline-year {
+       position: relative;
+       z-index: 1;
+       width: 40px;
+       height: 40px;
+       flex-shrink: 0;
+       border-radius: 20px;
+       background-color: color.$primary;
+       font-size: 12px;
+       font-weight: 600;
+       color: color.$heading;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: all 0.3s ease;
+
+       @media #{rs.$bp-lg} {
+         width: 80px;
+         height: 40px;
+         font-size: 14px;
+       }
+
+       @media #{rs.$bp-xl} {
+         width: 100px;
+         height: 40px;
+         font-size: 16px;
+       }
+    }
+ 
+    .timeline-img {
+       max-width: 60px;
+       position: absolute;
+       border-radius: 12px;
+       object-fit: cover;
+       bottom: 55px;
+       z-index: 10;
+       transition: all 0.3s ease;
+
+       @media #{rs.$bp-sm} {
+         max-width: 100px;
+       }
+
+       @media #{rs.$bp-lg} {
+         max-width: 150px;
+       }
+
+       @media #{rs.$bp-xl} {
+         max-width: 220px;
+         bottom: 68px;
+       }
+    }
+ 
+    .timeline-title {
+       font-size: 14px;
+       font-weight: 600;
+       color: color.$white;
+       position: absolute;
+       width: 200%;
+       bottom: -62px;
+       text-align: center;
+       z-index: 10;
+
+       @media #{rs.$bp-lg} {
+         font-size: 18px;
+       }
+
+       @media #{rs.$bp-xl} {
+         font-size: 24px;
+       }
+    }
+ 
+    &:first-child {
+       justify-content: flex-start;
+       padding-left: 0;
+
+       @media #{rs.$bp-sm} {
+         padding-left: 15px;
+       }
+
+       @media #{rs.$bp-lg} {
+         padding-left: 30px;
+       }
+
+       @media #{rs.$bp-xl} {
+         padding-left: 60px;
+       }
+    }
+ 
+    &:last-child {
+       justify-content: flex-end;
+       padding-right: 0;
+
+       @media #{rs.$bp-sm} {
+         padding-right: 15px;
+       }
+
+       @media #{rs.$bp-lg} {
+         padding-right: 30px;
+       }
+
+       @media #{rs.$bp-xl} {
+         padding-right: 60px;
+       }
+    }
+ 
+    &:nth-child(even) {
+       .timeline-img {
+          bottom: -55px;
+
+          @media #{rs.$bp-sm} {
+            bottom: -75px;
+          }
+
+          @media #{rs.$bp-lg} {
+            bottom: -105px;
+          }
+
+          @media #{rs.$bp-xl} {
+            bottom: -160px;
+          }
+       }
+ 
+       .timeline-title {
+          bottom: 70px;
+       }
+    }
+
+    &:hover {
+      .timeline-img {
+         transform: scale(1.05);
+      }
+    }
+ }
