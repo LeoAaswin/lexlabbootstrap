@@ -16,6 +16,7 @@
   --gray: #FAF6F3;
   --white: #FFFFFF;
   --warning-two: #D1B06B;
+  --warning-hover: #ECB014;
 }
 
 * {
@@ -244,4 +245,35 @@ html {
 
 .hover-lift:hover {
   transform: translateY(-8px);
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Additional utility classes */
+.bg-gradient-radial {
+  background: radial-gradient(var(--tw-gradient-stops));
+}
+
+.text-warning-hover {
+  color: var(--warning-hover);
 }

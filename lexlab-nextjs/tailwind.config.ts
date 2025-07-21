@@ -23,6 +23,7 @@ const config: Config = {
         },
         gray: '#FAF6F3',
         'warning-two': '#D1B06B',
+        'warning-hover': '#ECB014',
       },
       fontFamily: {
         sans: ['Manrope', 'sans-serif'],
@@ -79,6 +80,9 @@ const config: Config = {
             transform: 'scale(1)',
           },
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },
