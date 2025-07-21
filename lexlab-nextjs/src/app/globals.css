@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@200..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #E8BF96;
+  --primary-hover: #b78d5a;
+  --secondary: #FAF6F3;
+  --heading: #1C1D20;
+  --text: #262629;
+  --text-hover: #1F2732;
+  --border: rgba(254, 254, 254, 0.10);
+  --bg: #1C1D20;
+  --bg-secondary: #161D27;
+  --gray: #FAF6F3;
+  --white: #FFFFFF;
+  --warning-two: #D1B06B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Serif Display", serif;
+  color: var(--heading);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -1.04px;
+}
+
+h5, h6 {
+  letter-spacing: -0.48px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.67;
+  color: var(--text);
+}
+
+@media (min-width: 1200px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+a {
+  transition-duration: 350ms;
+  text-decoration: none;
+  outline: 0 solid transparent;
+  color: var(--heading);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font-size: 16px;
+  padding: 15px 32px;
+  border-radius: 5rem;
+  font-weight: 600;
+  letter-spacing: -0.14px;
+  position: relative;
+  height: 54px;
+  min-width: auto;
+  text-transform: capitalize;
+  overflow: hidden;
+  transition: all 350ms ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--white);
+}
+
+.btn-dark {
+  background-color: var(--bg);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background-color: var(--bg-secondary);
+  color: var(--white);
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  display: block;
+  height: 60px;
+}
+
+@media (min-width: 576px) {
+  .divider {
+    height: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .divider {
+    height: 90px;
+  }
+}
+
+@media (min-width: 992px) {
+  .divider {
+    height: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .divider {
+    height: 110px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .divider {
+    height: 130px;
+  }
+}
+
+/* Section heading */
+.section-heading h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -1.04px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 1400px) {
+  .section-heading h2 {
+    margin-bottom: 54px;
+  }
+}
+
+.section-heading .sub-title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Background utilities */
+.bg-img {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.bg-dark {
+  background-color: var(--bg) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+/* Animation utilities */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
