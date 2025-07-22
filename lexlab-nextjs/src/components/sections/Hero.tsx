@@ -35,7 +35,7 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Link href="/contact">
-                <Button className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto whitespace-nowrap">
                   Get Free Consultation
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />

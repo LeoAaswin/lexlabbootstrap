@@ -61,7 +61,7 @@ const Header = () => {
             {/* Navigation */}
             <div className={`${
               isMenuOpen ? 'block' : 'hidden'
-            } lg:flex lg:items-center lg:justify-end w-full lg:w-auto absolute lg:relative top-full lg:top-auto left-0 lg:left-auto bg-bg lg:bg-transparent mt-2 lg:mt-0 py-2 lg:py-0`}>
+            } lg:flex lg:items-center lg:justify-end w-full lg:w-auto absolute lg:relative top-full lg:top-auto left-0 lg:left-auto bg-bg lg:bg-transparent mt-2 lg:mt-0 py-2 lg:py-0 z-50`}>
               <ul className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8 xl:gap-11 px-4 lg:px-0">
                 {navItems.map((item) => (
                   <li key={item.href}>
@@ -89,7 +89,7 @@ const Header = () => {
                 {/* CTA Button */}
                 <Link
                   href="/contact"
-                  className="btn btn-primary inline-flex items-center gap-2 relative overflow-hidden group"
+                  className="btn btn-primary inline-flex items-center gap-2 relative overflow-hidden group whitespace-nowrap"
                 >
                   <span className="flex items-center gap-2 transition-all duration-300 group-hover:-translate-y-12">
                     Free Consultation
